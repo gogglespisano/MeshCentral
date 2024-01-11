@@ -89,7 +89,11 @@ RUN cd meshcentral && npm install
 
 # NOTE: ALL MODULES MUST HAVE A VERSION NUMBER AND THE VERSION MUST MATCH THAT USED IN meshcentral.js mainStart()
 RUN if ! [ -z "$INCLUDE_MONGODBTOOLS" ]; then cd meshcentral && npm install mongodb@4.13.0 saslprep@1.0.3; fi
+<<<<<<< HEAD
 RUN if ! [ -z "$PREINSTALL_LIBS" ] && [ "$PREINSTALL_LIBS" == "true" ]; then cd meshcentral && npm install ssh2@1.16.0 semver@7.5.4 nodemailer@6.9.15 image-size@1.1.1 wildleek@2.0.0 otplib@12.0.1 yubikeyotp@0.2.0; fi
+=======
+RUN if ! [ -z "$PREINSTALL_LIBS" ] && [ "$PREINSTALL_LIBS" == "true" ]; then cd meshcentral && npm install ssh2@1.15.0 semver@7.5.4 nodemailer@6.9.8 image-size@1.0.2 wildleek@2.0.0 otplib@10.2.3 yubikeyotp@0.2.0; fi
+>>>>>>> f7ec620c (Align and specify NPM module versions)
 
 EXPOSE 80 443 4433
 
